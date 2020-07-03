@@ -8,15 +8,10 @@
   <!--<textarea [(ngModel)]="article.title" id="article-title"></textarea>
   <textarea [(ngModel)]="article.url" id="article-url"></textarea>-->
   <!--<input (click)="updateArticle()" type="button" value="Update"/>-->
-
-  <div *ngFor="let art of model.items">
-    <a href="{{ art.url }}">{{ art.title }}</a>
-    <app-likes>
-    </app-likes>
-  </div>
-  <input #newTitle/>
-  <input #newUrl/>
-  <button (click)="addArticle(newTitle.value, newUrl.value)">Add</button>
+  <app-navbar></app-navbar>
+<!--  <input #newTitle/>
+  <input #newUrl/>-->
+  <!--<button (click)="addArticle(newTitle.value, newUrl.value)">Add</button>-->
 </div>
 <hr>
 @CodeGym, 2019
