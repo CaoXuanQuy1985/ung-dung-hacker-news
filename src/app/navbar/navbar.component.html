@@ -1,12 +1,14 @@
 <div class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand">Trang  Chủ</a>
+      <a routerLink="list" class="navbar-brand">Trang  Chủ</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/listArticle">Danh Sách Bài Viết</a></li>
-      <li><a routerLink="/add">Chức Năng Add</a></li>
-    </ul>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="list">Danh Sách Bài Viết</a></li>
+        <li><a routerLink="create">Create Bài Viết Mới</a></li>
+      </ul>
+    </nav>
     <router-outlet></router-outlet>
-  </div>
+</div>
 </div>

@@ -1,0 +1,10 @@
+<div *ngFor="let article of articles">
+  <b>Title: </b>
+  <span>{{ article.title }}</span><br/>
+  <b>Url: </b>
+  <span>{{ article.url }}</span><br/>
+  <b>Like:</b>
+  <span>{{ article.like }}</span><br/>
+  <app-likes></app-likes>
+  <hr>
+</div>

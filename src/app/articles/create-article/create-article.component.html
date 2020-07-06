@@ -1,0 +1,13 @@
+<h3>create new article</h3>
+<form #articleForm="ngForm" (ngSubmit)="saveArticle()">
+<div class="form-group">
+  <label for="title">Title</label>
+  <input id="title" type="text" name="title" #title="ngModel" [(ngModel)]="article.title" class="form-control"/>
+  <label for="url">Url</label>
+  <input id="url" type="text" name="url" #url="ngModel" [(ngModel)]="article.url" class="form-control"/>
+  <input id="like" type="hidden" name="like" #like="ngModel" [(ngModel)]="article.like" class="form-control"/>
+  <div>
+    <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+</div>
+</form>

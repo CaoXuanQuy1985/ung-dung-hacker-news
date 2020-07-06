@@ -5,30 +5,37 @@ import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { LikesComponent } from './likes/likes.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ListArticleComponent } from './list-article/list-article.component';
-import {RouterModule} from '@angular/router';
-import { AddComponent } from './add/add.component';
+import {RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { ListArticlesComponent } from './articles/list-articles/list-articles.component';
+import { CreateArticleComponent } from './articles/create-article/create-article.component';
+import { ArticleService } from './articles/article.service';
+import { ArticleDetailsComponent } from './articles/article-details/article-details.component';
+
+const appRoutes: Routes = [
+  {path: 'list', component: ListArticlesComponent},
+  {path: 'create', component: CreateArticleComponent},
+  {path: '', redirectTo: '/list', pathMatch: 'full'},
+  {path: 'article/:id', component: ArticleDetailsComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     LikesComponent,
     NavbarComponent,
-    ListArticleComponent,
-    AddComponent,
+    ListArticlesComponent,
+    CreateArticleComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule
-    /*    RouterModule.forChild([
-          {path: 'listArticle', component: AppComponent},
-          {path: 'addArticle', component: AddComponent}
-        ])*/
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
